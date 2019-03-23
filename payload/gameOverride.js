@@ -139,7 +139,7 @@ window.gameFunctions.gameOverride = function(){
 	
 	document.addEventListener('mousedown', function(e) {
 		// console.log(e.button);	
-		if((e.button == 2) || (e.button == 1) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))){
+		if((e.button == 1) || (e.button == 2) || (e.button == 3) || (e.button == 4) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))){
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		}
 		if(window.gameVars && window.gameVars.Menu)
@@ -156,7 +156,7 @@ window.gameFunctions.gameOverride = function(){
 	document.addEventListener('mouseup', function(e) {
 		if (e.button == 0) {
 			inpt.mouseButton = false;
-		} else if (e.button == 2 || e.button == 1) {
+		} else if (e.button == 1, 2, 3, 4) {
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 		}
 	});
@@ -266,7 +266,7 @@ window.gameFunctions.gameOverride = function(){
 			if(window.gameVars && window.gameVars.Menu && !(window.gameVars.Input.GlobalHookCallback))
 				return;
 			processInput({
-				code: e.deltaY < 0 ? -4 : -5, 
+				code: e.deltaY < 0 ? -6 : -7, 
 				shift: window.gameVars.Input.Keyboard.ShiftPressed,
 				ctrl: window.gameVars.Input.Keyboard.CtrlPressed,
 				alt: window.gameVars.Input.Keyboard.AltPressed
