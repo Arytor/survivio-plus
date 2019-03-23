@@ -397,6 +397,7 @@ window.gameFunctions.gameUpdate = function(){
 		else if(loot.name.includes('katana')) return true;
 		else if(loot.name.includes('stonehammer')) return true;
 		else if(loot.name.includes('woodaxe')) return true;
+		else if(loot.name.includes('naginata')) return true;
 
 		if(gunNames.includes(loot.name)) {
 			if(needGuns || lootIsDual)
@@ -437,7 +438,7 @@ window.gameFunctions.gameUpdate = function(){
 	
 	var autoFireGuns =  ["frag", "fists", "flare_gun", "mk12", "mp220", "m870", "sv98", "awc", "m39", "mosin", "smoke", "saiga", "m9", "m9_dual", "ot38", "ot38_dual", "deagle", "deagle_dual", "spas12", "garand", "karambit_rugged", "karambit_prismatic",
 		"bayonet_rugged", "bayonet_woodland", "huntsman_rugged", "huntsman_burnished", "woodaxe", "hook", "pan", "karambit_drowned", "woodaxe_bloody", "m4a1", "bowie_vintage", "bowie_frontier", "usas", "mirv", "bar", "fireaxe", "m1911", "m1911_dual", "m1a1", "m1100",
-			     "katana", "scorpion", "stonehammer", "model94", "snowball", "ots38_dual", "ots38", "katana_rusted", "kukri_trad", "an94", "machete_taiga", "m1014", "katana_orchid", "strobe"
+			     "katana", "naginata", "scorpion", "stonehammer", "model94", "snowball", "ots38_dual", "ots38", "katana_rusted", "kukri_trad", "an94", "machete_taiga", "m1014", "katana_orchid", "strobe0"
 	];
 	var grenadeTimerWarning = 1.05;
 	
@@ -537,12 +538,12 @@ window.gameFunctions.gameUpdate = function(){
 	}
 
 	var weaponSwitcher = function() {
-		if (curPlayer.curWeapIdx) {
+		if (curPlayer[obfuscate.localData].weapons["0"].name) {
 			pressOne();
 			return;
 		}
 
-		if (!curPlayer.curWeapIdx) {
+		if (!curPlayer[obfuscate.localData].weapons["0"].name) {
 			pressTwo();
 			return;
 		}		
@@ -682,7 +683,7 @@ window.gameFunctions.gameUpdate = function(){
 
 
 
-	if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "FRAG")
+	/* if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "FRAG")
 	{
 		if(!game[obfuscate.input].mouseButton)
 		{	
@@ -716,7 +717,7 @@ window.gameFunctions.gameUpdate = function(){
 			game[obfuscate.pieTimer].counterText._tint = 0xff0000;
 			game[obfuscate.pieTimer].labelText._tint = 0xff0000;
 		}
-	}
+	} */
 	// console.log(needToLoot());
 	
 	// Bump fire
