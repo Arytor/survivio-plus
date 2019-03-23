@@ -111,9 +111,15 @@ window.gameVars.Input.Keys.Codes = [{
     "name": "RMB"
 }, {
     "id": -4,
-    "name": "Wheel Up"
+    "name": "MB1"
 }, {
     "id": -5,
+    "name": "MB2"
+}, {
+    "id": -6,
+    "name": "Wheel Up"
+}, {
+    "id": -7,
     "name": "Wheel Down"
 }, {
     "id": 8,
